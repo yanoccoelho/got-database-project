@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-# got-database-project
-=======
 # Game of Thrones - Database Project
 
 ## Sobre o Projeto
