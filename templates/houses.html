@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Thrones</title>
+    <link rel="stylesheet" href="../static/css/lists.css"/>
+    <script src="../static/js/regions.js" defer></script>
+
+</head>
+<body>
+
+    <button onclick="window.location.href='/'" class="btn-home">
+        Home
+    </button>
+
+    <center><h1>Houses</h1>
+    
+      <p><i>Quantidade de elementos: {{qtd.qtd}}</i></p>
+
+      <div class="search-container">
+            <form name="msearch" action="javascript:window.open('/houses/search/'+document.forms['msearch'].elements['expr'].value,'_self')">
+              <input name="expr" class="search-input" id="expr" placeholder="Search..." required/>
+            <button type="submit" class="search-btn">🔍</button>
+        </form>
+      </div>
+
+    </center>
+    <table>
+      <tr>
+        <th>
+          <b>Name</b>
+        </th>
+        <th>
+          <b>Words</b>
+        </th>
+      </tr>
+      {% for h in houses %}
+      <tr>
+        <td>
+          <a href="/houses/{{ h.House_Id }}">{{ h.House }}</a>
+        </td>
+        <td>
+          {{ h.Words }}
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+
+</body>
+</html>
